@@ -1,0 +1,43 @@
+Create a Remote Repository
+-	 Sign Up into www.github.com and verify email id. 
+-	Create a New empty repository in Github using browser. 
+-	Navigate to a directory in local that is not a git directory
+
+To  clone the remote repository into local machine
+--- git clone < REMOTE_GIT_SSH_URL>
+--- git clone < REMOTE_GIT_HTTP/HTTPS _URL>
+
+To lists the names of all the remote repositories
+--- git remote –v
+
+To have multiple commits created, add or modify some files -> commit and push it to GitHub
+--- git config --local user.name "TestUser" 
+--- git config --local user.email "testuser@example.com" 
+--- echo "this is file created in local repo" >> file.txt 
+--- git add 
+--- git status
+---  git commit -m "Message for the commit"
+
+To Generating an SSH Key, Use the github sign-in email address in the below command/ create id_rsa ( Private Key) and a id_rsa.pub ( Public)
+---ssh-keygen -t rsa -C "@gmail.com"
+
+Add the Public Key file content into your Github Account Settings under:
+--- Settings > SSH and GPG keys. > New SSH key > Paste the Public Key Content > Save
+
+To verify SSH authentication
+--- ssh -T git@github.com
+--- ssh -i T <PRIVATE_KEY_PATH>git@github.com 
+
+
+Git Push
+First time push command use below -u parameter
+--- git push -u origin master
+
+Using git remote add command allows us to associate a remote repository
+--- git remote add origin git@github.com:< GITHUB_USERNAME>/git-practical.git
+
+If there are any changes made in the Remote Repository, to have those changes present in Local Repository, then use below command / Push changes in GitHub
+---git pull origin master
+
+To get or display the content of the file as per particular commit.
+--- git show e4b71efa7f76c0fc0875e0562d5fb6d7dadbff9c:newfile.txt
