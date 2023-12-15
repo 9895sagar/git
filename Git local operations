@@ -1,0 +1,101 @@
+To check the version of the Git
+--- git --version
+
+To Create Local Repository
+--- mkdir git-practical
+
+Go into the created repository
+--- cd git-practical
+
+To initialize git into local repository
+--- git init
+
+List all content file images repositories are present into the git or present folder
+--- ls
+
+List all the files recursively / List all the files in the current directory
+--- ls –al
+
+To check which users are currently present on the local machine
+--- git config –list
+
+To set Local config for git repo 
+--- git config --local user.name "TestUser" 
+--- git config --local user.email testuser@example.com
+
+This will result in [user] section added to .git/config file
+--- cat .git/config
+
+To set remote / globle config for git repo 
+--- git config --global user.email "testuser@example.com" 
+--- git config --global user.name "TestUser"
+
+To create any file and write inside anything in file without deletion
+--- echo 'This is Repo Created for Devops Demo' >> file.txt
+--- echo 'This is content written after 1st Commit' >> file.txt
+
+To check the status of the file
+--- git status
+
+To add the file in local repository
+--- git add
+
+To check the status of the file
+--- git status
+
+To commit the file with the commit message
+--- git commit -m "changes made in the particular file"
+--- git commit -m "added changes to same file for new commit"
+
+To check the logs of that file / files or Viewing the Commit History and view commit details in one line
+--- git log
+--- git log –oneline
+--- git log –stat
+--- git log --pretty=oneline
+
+To view the only last two entries
+--- git log -p -2
+
+To check what is the committed by using commit id
+--- git show <commit ID>
+
+To change the commit message of an existing commit
+1.	Write anything inside the file
+--- echo "this is testing file" >> newfile.txt
+2.	To add file in local repository
+--- git add newfile.txt
+3.	To commit that file with commit message
+--- git commit -m 'newfile123.txt commit'
+4.	To commit that message with another message by using amend
+--- git commit --amend -m "newfile.txt commit"
+5.	To view the only last two entries
+--- git log -p -2
+
+Un-staging the stage file
+1.	Write anything inside the file
+--- echo "this is testing file" >> newfile.txt
+2.	To add file or all files in local repository
+--- git add newfile.txt
+--- git add *
+3.	To un stage the file
+--- git reset newfile.txt
+4.	To commit the unstage file
+--- git commit -m "added new change"
+5.	To view the only last two entries
+--- git log -p -2
+
+To compares your staged changes to your last commit:
+--- git diff –staged
+
+Make some changes in the file that is already staged, which command will show the differences
+--- git diff
+
+
+
+
+
+
+
+
+
+
